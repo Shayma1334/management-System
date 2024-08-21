@@ -14,7 +14,7 @@ $("#submit").on("click", function () {
   var Email = $("#email").val();
   var Passe = $("#password").val();
   if (admin.email === Email && admin.password === Passe) {
-    alert("You can  access Oxford students.");
+    alert("You can access Oxford students.");
     $("#succlogin").show();
   }
 });
@@ -53,9 +53,12 @@ var addStudent = function () {
   var email = $("#email").val();
   var number = $("#number").val();
   var age = $("#age").val();
+
   this.students.push(makeStudent(firstName, lastName, age, email, number));
-  numberOfStudents = this.students.length;
-  //   this.displayAllStudents();
+  this.numberOfStudents = this.students.length;
+
+  // Immediately display all students after adding a new one
+  this.displayAllStudents();
 };
 
 ///////////////////////////////////////////////////////
@@ -77,16 +80,14 @@ var getStudentsByInitials = function (firstinitial, secondinitial) {
 
 /////////////////////////////////////////////////////
 
-var removeStudent = function () {
-  var firstName = $("#firstName").val();
-
+var removeStudent = function (id) {
   for (let i = 0; i < this.students.length; i++) {
-    if (this.students[i].firstName === firstName) {
+    if (this.students[i].id === id) {
       this.students.splice(i, 1);
       console.log(this.students);
     }
   }
-  numberOfStudents = this.students.length;
+  this.numberOfStudents = this.students.length;
   this.displayAllStudents();
 };
 
@@ -96,14 +97,22 @@ var displayAllStudents = function () {
   $("#studentslist").empty();
   for (var i = 0; i < this.students.length; i++) {
     $("#studentslist").append(
-      ` <div class="student"><p>firstName:${this.students[i].firstName}</p>
-        <p>lastName:${this.students[i].lastName}</p>
-        <p>age:${this.students[i].age}</p>
-        <p>email:${this.students[i].email}</p>
-        <p>number:${this.students[i].number}</p>
-        </div>`
+      `<div class="student" data-id="${this.students[i].id}">
+        <p>First Name: ${this.students[i].firstName}</p>
+        <p>Last Name: ${this.students[i].lastName}</p>
+        <p>Age: ${this.students[i].age}</p>
+        <p>Email: ${this.students[i].email}</p>
+        <p>Phone Number: ${this.students[i].number}</p>
+        <button class="remove-btn" data-id="${this.students[i].id}">Remove Student</button>
+      </div>`
     );
   }
+
+  // Add event listener for remove buttons
+  $(".remove-btn").on("click", function () {
+    var studentId = $(this).data("id");
+    class1.removeStudent(studentId);
+  });
 };
 
 /////////////////////////////////////////////////////
@@ -112,13 +121,4 @@ var class1 = studentslist();
 // events
 $("#add").on("click", function () {
   class1.addStudent();
-});
-
-$("#remove").on("click", function () {
-  class1.removeStudent();
-  console.log("f");
-});
-
-$("#show").on("click", function () {
-  class1.displayAllStudents();
 });
