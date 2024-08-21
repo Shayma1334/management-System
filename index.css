@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://img.freepik.com/premium-photo/group-diverse-college-students-studying-together-library-they-are-all-looking-book-background-is-blurred_14117-194166.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+  }
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .login-box input[type="email"],
+  .login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #succlogin {
+    display: none;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #4CAF50;
+    text-decoration: none;
+  }
+
+  #succlogin:hover {
+    text-decoration: underline;
+  }
+

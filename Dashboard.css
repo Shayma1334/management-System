@@ -1,0 +1,116 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: url('https://eccles.utah.edu/wp-content/uploads/2015/04/Study-Group-web.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: green;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1em;
+}
+
+
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #3b82f6;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+
+/* Student List */
+#studentslist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Student Card */
+.student {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    background-color: #f9a8d4;
+    border-radius: 12px;
+    transition: transform 0.3s;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+
+/* Hover effect for the cards for a better user experience  */
+.student:hover {
+    transform: scale(1.05);
+}
+
+.student p {
+    margin: 5px 0;
+    color: #1f2937;
+    font-weight: bold;
+}
+
+
+.remove-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e11d48;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.remove-btn:hover {
+    background-color: #dc2626;
+}
+
+
+
+
